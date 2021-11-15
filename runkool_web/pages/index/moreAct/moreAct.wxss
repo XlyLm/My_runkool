@@ -1,0 +1,54 @@
+/* pages/index/moreAct/moreAct.wxss */
+page{
+  height:98%;
+}
+/* 活动容器 */
+.action{
+  width:100%;
+  box-sizing: border-box;
+  display:flex;
+  font-size:30rpx;
+  border-radius:24rpx;
+  justify-content: space-between;
+  padding:10rpx 12rpx 0 24rpx;
+  background-color:#ffe3fe;
+}
+/* 活动列表 */
+.action .main{
+  width:100%;
+}
+.action .main>text{
+  display: block;
+  line-height:120rpx;
+  text-align: center;
+}
+.action .main .actions{
+  width:100%;
+  height:200rpx;
+  margin-top:52rpx;
+  border-bottom:2rpx solid #a9a7aa;
+  font-size:24rpx;
+}
+.action .main .actions .actImage image{
+  width:99%;
+  height:100rpx;
+  margin-bottom:16rpx;
+  border-radius:20rpx;
+  overflow: hidden;
+}
+/* 活动信息 */
+.action .main .actions .actionName,.actionInfo{
+  box-sizing: border-box;
+  width:99%;
+  padding:0 10rpx;
+}
+.action .main .actions .actionName{
+  box-sizing: border-box;
+  width:99%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 10rpx;
+}
+.action .main .actions .actionInfo text{
+ margin-right:50rpx;
+}

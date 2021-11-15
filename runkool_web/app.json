@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/entery/entery",
+    "pages/index/index",
+    "pages/find/find",
+    "pages/my/my",
+    "pages/logs/logs",
+    "custom-tab-bar/index",
+    "pages/index/teamCard/teamCard",
+    "pages/index/praviteCard/praviteCard",
+    "pages/index/runStar/runStar",
+    "pages/index/blogChat/blogChat",
+    "pages/index/scan/scan",
+    "pages/index/scan/fail/fail",
+    "pages/index/moreFun/moreFun",
+    "pages/index/moreAct/moreAct",
+    "pages/index/runStart/runStart",
+    "pages/my/userInfor/userInfor",
+    "pages/my/myShow/myShow",
+    "pages/my/collect/collect",
+    "pages/my/setting/setting",
+    "pages/my/onlineservice/onlineService",
+    "pages/find/Blogs/Blogs",
+    "pages/my/addAct/addAct"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#700572",
+    "navigationBarTitleText": "酷跑部落",
+    "backgroundColor": "#f9eeff",
+    "navigationBarTextStyle": "white",
+    "backgroundColorBottom": "#f5930b",
+    "initialRenderingCache": "static"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#04ede9",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

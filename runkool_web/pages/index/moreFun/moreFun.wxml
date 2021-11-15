@@ -1,0 +1,12 @@
+<!--pages/index/moreFun/moreFun.wxml-->
+<view class="all">
+  <view class="city" bindtap="ToCityAndWeather">
+  <view class="img"><image  src="/images/index/城市.png" ></image></view>
+  <text>城市</text>
+</view>
+<view class="weather" bindtap="ToCityAndWeather">
+  <view class="img"><image src="/images/index/天气.png" ></image></view>
+  <text>天气</text>
+</view>
+</view>
+

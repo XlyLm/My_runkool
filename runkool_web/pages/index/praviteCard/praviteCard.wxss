@@ -1,0 +1,171 @@
+/* pages/index/praviteCard/praviteCard.wxss */
+page{
+  height:100%;
+  padding-bottom:20rpx;
+}
+.container{
+  padding-bottom:0;
+}
+/* 搜索栏 */
+.searchCont{
+  position:relative;
+  width:100%;
+  height:120rpx;
+  box-sizing: border-box;
+  margin:0 auto;
+  border-radius:24rpx;
+  background-color:#ffe3fe;
+}
+.searchCont .search_box,.search-bar__label{
+  position:absolute;
+  left:24rpx;
+  top:12rpx;
+  background-color: white;
+  border-radius:18rpx;
+}
+.searchCont .search_box{
+  box-sizing: border-box;
+  width:81%;
+  height:80%;
+  display:flex;
+  z-index:1;
+}
+.searchCont .search_box .icon-search{
+  box-sizing: border-box;
+  width:100rpx;
+  height:100rpx;
+  padding-top:24rpx;
+  text-align: center;
+}
+.searchCont .search_box .search-bar__input{
+  height:50rpx;
+  margin-top:20rpx;
+}
+.searchCont .icon-clear{
+  position:absolute;
+  right:0;
+  margin:0;
+  width:100rpx;
+  line-height:118rpx;
+  color:#0b00ab;
+  opacity:0.6;
+  z-index:1;
+}
+.searchCont .search-bar__label{
+  width:94%;
+  height:80%;
+  line-height:80rpx;
+  text-align: center;
+  overflow: hidden;
+  color:#878787;
+  z-index:2;
+}
+.searchCont .appearH{
+  height:0;
+}
+.searchCont .search-bar__label .icon-search{
+  width:80rpx;
+  margin-top:26rpx;
+}
+/* 添加活动打卡 */
+.addAct{
+  width:64%;
+  line-height:100rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color:green;
+  margin:18rpx auto;
+  border-radius:24rpx;
+  background-color:#eaff00;
+}
+/* 输入活动名弹框 */
+.mask{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+  /* opacity:0.6; */
+  z-index:99;
+  background-color:transparent;
+}
+.hidden{
+  height:0;
+}
+.input_window{
+  opacity:initial;
+  margin:360rpx auto 0;
+  width:360rpx;
+  height:320rpx;
+  text-align: center;
+  color:whitesmoke;
+  border-radius:24rpx;
+  background-color:#c8c8d0;
+}
+.input_window>text{
+  display:block;
+  line-height:100rpx;
+}
+.input_window .int{
+    box-sizing: border-box;
+    width:90%;
+    height:72rpx;
+    padding-left:32rpx;
+    margin:12rpx auto 24rpx;
+    background-color:white;
+}
+.input_window input{
+  margin-top:6rpx;
+  height:60rpx;
+  text-align: left;
+  color:gray;
+}
+.input_window>view{
+  display:flex;
+  justify-content: space-around;
+}
+.input_window>view text{
+  display:block;
+  width:100rpx;
+  line-height:64rpx;
+  background-color:blue;
+}
+/* 打卡活动信息 */
+.playInforCont{
+  width:100%;
+  border-radius:24rpx;
+  padding:18rpx 8rpx;
+  background-color: #ffe3fe;
+}
+.playInforCont>text{
+  display:block;
+  line-height:72rpx;
+  width:100%;
+  text-align: center;
+  color:#ff00e1;
+}
+.playInforCont .playInforList{
+  box-sizing: border-box;
+  width:94%;
+  margin:0 auto 36rpx;
+  display:flex;
+  flex-wrap: wrap;
+  padding:12rpx 16rpx;
+  border-radius:16rpx;
+  background-color:white;
+}
+.playInforCont .playInforList>view{
+  line-height:46rpx;
+}
+.playInforCont .playInforList>view:first-child{
+  width:300rpx;
+  margin-right:160rpx;
+}
+.playInforCont .playInforList>view mp-icon{
+  margin-right:6rpx;
+}
+.playInforCont .playInforList>view text{
+  font-size:24rpx;
+  color:green;
+}

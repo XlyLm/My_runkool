@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.xie.dao.PravitecarsDao">
+
+    <resultMap type="www.xie.entity.Pravitecars" id="PravitecarsMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userid" column="userid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PravitecarsMap">
+        select
+          id, userid, name, time, address
+        from koolrun.pravitecars
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PravitecarsMap">
+        select
+          id, userid, name, time, address
+        from koolrun.pravitecars
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PravitecarsMap">
+        select
+        id, userid, name, time, address
+        from koolrun.pravitecars
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="time != null and time != ''">
+                and time = #{time}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.pravitecars(userid, name, time, address)
+        values (#{userid}, #{name}, #{time}, #{address})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.pravitecars(userid, name, time, address)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.time}, #{entity.address})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.pravitecars(userid, name, time, address)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.time}, #{entity.address})
+        </foreach>
+        on duplicate key update
+        userid = values(userid) , name = values(name) , time = values(time) , address = values(address)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update koolrun.pravitecars
+        <set>
+            <if test="userid != null">
+                userid = #{userid},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="time != null and time != ''">
+                time = #{time},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from koolrun.pravitecars where id = #{id}
+    </delete>
+
+    <!--queryPersonPunchCard-->
+    <select id="queryPersonPunchCard" resultType="www.xie.entity.Pravitecars">
+        select
+        id, userid, name, time, address
+        from koolrun.pravitecars
+        where userid = #{userid}
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--searchPersonPunchCard-->
+    <select id="searchPersonPunchCard" resultType="www.xie.entity.Pravitecars">
+        select
+        id, userid, name, time, address
+        from koolrun.pravitecars
+        WHERE userid = #{userid}
+        AND name LIKE #{string}
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--deletePravitecard(Long id,Long userId);-->
+    <delete id="deletePravitecard" >
+        delete from koolrun.pravitecars where id = #{id} and userid= #{userid}
+    </delete>
+</mapper>
+

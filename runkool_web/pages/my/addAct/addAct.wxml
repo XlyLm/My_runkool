@@ -1,0 +1,26 @@
+<!--pages/my/addAct/addAct.wxml-->
+<view class="container">
+  <form bindsubmit="submit">
+    <view class="box">
+      <view class="img">
+        <view wx:if="{{show}}" bindtap="bindshow">点击添加活动图片</view>
+        <image wx:else src="{{imgurl}}" mode="scaleToFill" bindtap="bindhide"></image>
+      </view>
+      <view>举办部落/人：<input name="blog" type="text" placeholder-color="gray" placeholder="必填"/></view>
+      <view>时间：<input name="time" type="text" placeholder-color="gray" placeholder="例:2021/10/12 13:20:10"/></view>
+      <view>地点：<input name="address" type="text" placeholder-color="gray" placeholder="必填"/></view>
+      <view>
+        <radio-group name="radio">
+          <view>活动方式：</view>
+          <label>
+            <radio value="团队" checked="true"></radio>团队
+          </label>
+          <label>
+            <radio value="个人"></radio>个人
+          </label>
+        </radio-group>
+      </view>
+      <button form-type="submit" type="primary">提交</button>
+    </view>
+  </form>
+</view>

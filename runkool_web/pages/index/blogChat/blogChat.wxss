@@ -1,0 +1,45 @@
+/* pages/index/blogChat/blogChat.wxss */
+.container .foot{
+  position: fixed;
+  left:0;
+  bottom:0;
+  display: flex;
+  line-height:120rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width:100%;
+  height:120rpx;
+  padding:0 24rpx;
+  background-color: #b2a8a0;
+}
+.container .foot>view{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width:100%;
+  height:100%;
+}
+.container .foot view .intCont{
+  height:60%;
+  margin-top:22rpx;
+  margin-right:12rpx;
+  padding-top:12rpx;
+  background-color:white;
+  border-radius:16rpx;
+  padding-left:24rpx;
+}
+.container .foot view mp-icon{
+  width:72rpx;
+  margin-right:12rpx;
+}
+.container .foot button{
+  position: relative;
+  right:-18rpx;
+  top:24rpx;
+  margin:0;
+  padding:12rpx 0 0;
+  width:108rpx;
+  height:82rpx;
+  font-size:36rpx;
+  color:white;
+}

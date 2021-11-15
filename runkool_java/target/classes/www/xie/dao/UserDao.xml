@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.xie.dao.UserDao">
+
+    <resultMap type="www.xie.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="openid" column="openid" jdbcType="VARCHAR"/>
+        <result property="sessionkey" column="sessionkey" jdbcType="VARCHAR"/>
+        <result property="token" column="token" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="num" column="num" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="img" column="img" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="work" column="work" jdbcType="VARCHAR"/>
+        <result property="grade" column="grade" jdbcType="INTEGER"/>
+        <result property="ct" column="ct" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="UserMap">
+        select
+          id, openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade, ct
+        from koolrun.user
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="UserMap">
+        select
+          id, openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade, ct
+        from koolrun.user
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="UserMap">
+        select
+        id, openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade, ct
+        from koolrun.user
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="openid != null and openid != ''">
+                and openid = #{openid}
+            </if>
+            <if test="sessionkey != null and sessionkey != ''">
+                and sessionkey = #{sessionkey}
+            </if>
+            <if test="token != null and token != ''">
+                and token = #{token}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="num != null and num != ''">
+                and num = #{num}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="password != null and password != ''">
+                and password = #{password}
+            </if>
+            <if test="img != null and img != ''">
+                and img = #{img}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="work != null and work != ''">
+                and work = #{work}
+            </if>
+            <if test="grade != null">
+                and grade = #{grade}
+            </if>
+            <if test="ct != null and ct != ''">
+                and ct = #{ct}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.user(openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade,ct)
+        values (#{openid}, #{sessionkey}, #{token}, #{phone}, #{num}, #{name}, #{password}, #{img}, #{sex}, #{address}, #{work}, #{grade}, #{ct})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.user(openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade ,ct)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.openid}, #{entity.sessionkey}, #{entity.token}, #{entity.phone}, #{entity.num}, #{entity.name},
+            #{entity.password}, #{entity.img}, #{entity.sex}, #{entity.address}, #{entity.work}, #{entity.grade},#{entity.ct})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.user(openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade,ct)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.openid}, #{entity.sessionkey}, #{entity.token}, #{entity.phone}, #{entity.num}, #{entity.name},
+            #{entity.password}, #{entity.img}, #{entity.sex}, #{entity.address}, #{entity.work}, #{entity.grade})
+        </foreach>
+        on duplicate key update
+        openid = values(openid) , sessionkey = values(sessionkey) , token = values(token) , phone = values(phone) , num
+        = values(num) , name = values(name) , password = values(password) , img = values(img) , sex = values(sex) ,
+        address = values(address) , work = values(work) , grade = values(grade),    ct = values(ct)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update koolrun.user
+        <set>
+            <if test="openid != null and openid != ''">
+                openid = #{openid},
+            </if>
+            <if test="sessionkey != null and sessionkey != ''">
+                sessionkey = #{sessionkey},
+            </if>
+            <if test="token != null and token != ''">
+                token = #{token},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="num != null and num != ''">
+                num = #{num},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="img != null and img != ''">
+                img = #{img},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="work != null and work != ''">
+                work = #{work},
+            </if>
+            <if test="grade != null">
+                grade = #{grade},
+            </if>
+            <if test="ct != null and ct != ''">
+                ct = #{ct},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from koolrun.user where id = #{id}
+    </delete>
+
+    <!--queryUserByPhone-->
+    <select id="queryUserByPhone" resultType="www.xie.entity.User">
+        select * from user where phone=#{phone}
+    </select>
+
+    <!--queryUserByMap-->
+    <select id="queryUserByMap" resultType="www.xie.entity.User">
+        select * from user where phone=#{phone}  and password = #{password}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="getList" resultType="www.xie.entity.User">
+        select
+        id, openid, sessionkey, token, phone, num, name, password, img, sex, address, work, grade
+        from koolrun.user
+        ORDER BY grade DESC
+        limit 30
+    </select>
+</mapper>

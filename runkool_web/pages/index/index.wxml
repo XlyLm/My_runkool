@@ -1,0 +1,79 @@
+<view class="container">
+<!-- 轮播图 -->
+  <view class="swiper">
+    <swiper indicator-dots="true" indicator-color="#08de56" indicator-active-color="#de0890" autoplay="true" interval="2000"    duration="500">
+      <block wx:for="{{imgsurl}}" wx:key="index">
+        <swiper-item>
+             <image src="{{'http://121.41.109.167/runkool/img/'+item.img}}"></image>
+          </swiper-item>
+      </block>  
+    </swiper>
+  </view>
+  <!-- 部落名 -->
+  <view class="blogNamecont">
+    <image mode="aspectFill" src="{{user.img}}"></image>
+    <text>{{blogname}}</text>
+  </view>
+  <!-- 打卡 -->
+  <view class="playCard">
+    <view class="team" bindtap="toTeamCard">
+      <icon class="iconfont icon-tuandui"></icon>
+      <text>活动打卡</text>
+    </view>
+    <view class="pravite" bindtap="toPraviteCard">
+      <icon class="iconfont icon-geren"></icon>
+      <text>个人打卡</text>
+    </view>
+  </view>
+  <!-- 酷跑信息榜 -->
+  <view class="infor">
+    <view class="star" bindtap="toRunStar">
+      <mp-icon icon="star" type="field" color="yellow" size="{{36}}"></mp-icon>
+      <text>酷跑星榜</text>
+    </view>
+    <view class="inforLine"></view>
+    <view class="chat" bindtap="toBlogChat">
+      <mp-icon icon="comment" type="field" color="#00fffb" size="{{36}}"></mp-icon>
+      <text>部落群聊</text>
+    </view>
+    <view class="inforLine"></view>
+    <view class="scan" bindtap="toScan">
+      <icon class="iconfont icon-saoyisao"></icon>
+      <text>扫一扫</text>
+    </view>
+    <view class="inforLine"></view>
+    <view class="more" bindtap="toMoreFun">
+      <mp-icon icon="more2" type="field" color="#b5c4ad" size="{{36}}"></mp-icon>
+      <text>更多功能</text>
+    </view>
+  </view>
+  <!-- 酷跑开始 -->
+  <view class="runStart" bindtap="toRunStart">
+    <text>开始酷跑</text>
+    <mp-icon icon="location" color="yellow"></mp-icon>
+  </view>
+  <view class="vLine"></view>
+  <!-- 活动 -->
+  <view class="action">
+    <view class="head">
+      <text>活动</text>
+      <view bindtap="toMoreAct">
+        <text>更多</text>
+        <mp-icon icon="arrow" color="gray" size="{{12}}"></mp-icon>
+      </view>
+    </view>
+    <view class="main" >
+      <view class="actions" wx:if="{{index<3}}" wx:for="{{array}}" wx:key="index" bindtap="addAct" style="color:#a9a7aa" data-index="{{index}}">
+        <view class="actImage"><image  mode="scaleToFill" src="{{item.img}}"></image></view>
+        <view class="actionName">
+          <text>举办部落/人：{{item.name}}</text>
+          <text>{{item.type}}</text>
+        </view>
+        <view class="actionInfo">
+          <text>时间：{{item.time}}</text>
+          <text>地点：{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

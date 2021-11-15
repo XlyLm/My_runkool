@@ -1,0 +1,10 @@
+/* pages/index/scan/fail/fail.wxss */
+.errCont{
+  width:86%;
+  line-height:360rpx;
+  margin:120rpx auto;
+  color:yellow;
+  font-size:52rpx;
+  text-align: center;
+  border-radius:36rpx;
+}

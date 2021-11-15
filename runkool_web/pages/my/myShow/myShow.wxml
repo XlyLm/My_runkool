@@ -1,0 +1,13 @@
+<!--pages/my/myShow/myShow.wxml-->
+<view class="container">
+  <scroll-view style="height:100%" scroll-y="true"  bindscrolltolower="lower">
+  <text>图片上传</text>
+  <view class="box">
+    <view class="imgList" wx:for="{{imgs}}" wx:key="index" data-index="{{index}}" bindtap="{{index>0?'clearImg':''}}">
+      <icon wx:if="{{index<1}}" class="iconfont icon-shangchuantupian" bindtap="addImg"></icon>
+      <image wx:else mode="aspectFit"  src="{{item.img}}"></image>
+    </view>
+  </view>
+  <text class="bot">{{bottom?"到底了!!!":'正在搜索...'}}</text>
+</scroll-view>
+</view>

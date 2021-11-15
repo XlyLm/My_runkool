@@ -1,0 +1,33 @@
+/* pages/index/moreFun/moreFun.wxss */
+.all {
+  margin-top: 20rpx;
+}
+.city , .weather{
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  /* flex-direction:column; */
+  /* line-height: 400px; */
+  text-align: center;
+  background: rgb(129, 131, 255);
+  border-radius: 50rpx;
+  border: 10rpx solid #666;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+.img {
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.city image,.weather image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.city text, .weather text{
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  margin-left: 100rpx;
+}

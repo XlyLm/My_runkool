@@ -1,0 +1,123 @@
+/* pages/index/teamCard/teamCard.wxss */
+page{
+  height:100%;
+  padding-bottom:20rpx;
+}
+.container{
+  padding-bottom:0;
+}
+/* 搜索栏 */
+.searchCont{
+  position:relative;
+  width:100%;
+  height:120rpx;
+  box-sizing: border-box;
+  margin:0 auto;
+  border-radius:24rpx;
+  background-color:#ffe3fe;
+}
+.searchCont .search_box,.search-bar__label{
+  position:absolute;
+  left:24rpx;
+  top:12rpx;
+  background-color: white;
+  border-radius:18rpx;
+}
+.searchCont .search_box{
+  box-sizing: border-box;
+  width:81%;
+  height:80%;
+  display:flex;
+  z-index:1;
+}
+.searchCont .search_box .icon-search{
+  box-sizing: border-box;
+  width:100rpx;
+  height:100rpx;
+  padding-top:24rpx;
+  text-align: center;
+}
+.searchCont .search_box .search-bar__input{
+  height:50rpx;
+  margin-top:20rpx;
+}
+.searchCont .icon-clear{
+  position:absolute;
+  right:0;
+  margin:0;
+  width:100rpx;
+  line-height:118rpx;
+  color:#0b00ab;
+  opacity:0.6;
+  z-index:1;
+}
+.searchCont .search-bar__label{
+  width:94%;
+  height:80%;
+  line-height:80rpx;
+  text-align: center;
+  overflow: hidden;
+  color:#878787;
+  z-index:2;
+}
+.searchCont .appearH{
+  height:0;
+}
+.searchCont .search-bar__label .icon-search{
+  width:80rpx;
+  margin-top:26rpx;
+}
+/* 活动记录 */
+.action{
+  width:100%;
+  margin-top:36rpx;
+  border-radius:12rpx;
+  background-color:#ffe3fe;
+}
+.action>text{
+  display:block;
+  line-height:72rpx;
+  width:100%;
+  text-align: center;
+  color:#ff00e1;
+}
+.action .colorYellow{
+  color:#ff5100;
+}
+.action .colorGreen{
+  color:green;
+}
+.action .colorGray{
+  color:#a9a7aa;
+}
+.action .actList{
+  padding-bottom:8rpx;
+  margin-bottom:24rpx;
+  width:100%;
+  height:200rpx;
+  font-size:24rpx;
+  border-bottom:2rpx solid #b4a8a3;
+}
+.action .actList .actImage image{
+  width:100%;
+  height:100rpx;
+  margin-bottom:16rpx;
+  border-radius:20rpx;
+  overflow: hidden;
+}
+/* 活动信息 */
+.action .actList .actionName,.actionInfo{
+  box-sizing: border-box;
+  width:99%;
+  padding:0 10rpx;
+}
+.action .actList .actionName{
+  box-sizing: border-box;
+  width:99%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 10rpx;
+}
+.action .actList .actionInfo text{
+ margin-right:50rpx;
+}

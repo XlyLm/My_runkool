@@ -1,0 +1,5 @@
+{
+  "usingComponents": {"mp-icon": "weui-miniprogram/icon/icon"},
+  "navigationBarTitleText":"个人打卡",
+  "enablePullDownRefresh":true
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.xie.dao.AddblogDao">
+
+    <resultMap type="www.xie.entity.Addblog" id="AddblogMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userid" column="userid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="grade" column="grade" jdbcType="INTEGER"/>
+        <result property="maxnum" column="maxnum" jdbcType="VARCHAR"/>
+        <result property="personnum" column="personnum" jdbcType="VARCHAR"/>
+        <result property="isopen" column="isopen" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AddblogMap">
+        select
+          id, userid, name, grade, maxnum, personnum,isopen
+        from koolrun.addblog
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AddblogMap">
+        select
+          id, userid, name, grade, maxnum, personnum,isopen
+        from koolrun.addblog
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AddblogMap">
+        select
+        id, userid, name, grade, maxnum, personnum,isopen
+        from koolrun.addblog
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="grade != null">
+                and grade = #{grade}
+            </if>
+            <if test="maxnum != null and maxnum != ''">
+                and maxnum = #{maxnum}
+            </if>
+            <if test="personnum != null and personnum != ''">
+                and personnum = #{personnum}
+            </if>
+            <if test="isopen != null and isopen != ''">
+                and isopen = #{isopen}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.addblog(userid, name, grade, maxnum, personnum,isopen)
+        values (#{userid}, #{name}, #{grade}, #{maxnum}, #{personnum}, #{isopen})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.addblog(userid, name, grade, maxnum, personnum, isopen)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.grade}, #{entity.maxnum}, #{entity.personnum}, #{entity.isopen})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.addblog(userid, name, grade, maxnum, personnum, isopen)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.grade}, #{entity.maxnum}, #{entity.personnum}, #{entity.isopen})
+        </foreach>
+        on duplicate key update
+        userid = values(userid) , name = values(name) , grade = values(grade) , maxnum = values(maxnum) , personnum =
+        values(personnum), , isopen = values(isopen)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update koolrun.addblog
+        <set>
+            <if test="userid != null">
+                userid = #{userid},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="grade != null">
+                grade = #{grade},
+            </if>
+            <if test="maxnum != null and maxnum != ''">
+                maxnum = #{maxnum},
+            </if>
+            <if test="personnum != null and personnum != ''">
+                personnum = #{personnum},
+            </if>
+            <if test="isopen != null and isopen != ''">
+                isopen = #{isopen},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from koolrun.addblog
+        where id = #{id} and userid = #{userid}
+    </delete>
+
+    <!--查询所有-->
+    <select id="queryProInfo" resultType="www.xie.entity.Addblog">
+        select
+          id, userid, name, maxnum, personnum, grade,isopen
+        from koolrun.addblog
+        where userid = #{userid}
+        ORDER BY grade DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+</mapper>

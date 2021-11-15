@@ -1,0 +1,12 @@
+<!--pages/index/blogChat/blogChat.wxml-->
+<view class="container">
+  <view class="foot">
+  <view>
+    <mp-icon icon="voice" size="{{26}}"></mp-icon>
+    <view class="intCont"><input type="text" value="{{saying}}"/></view>
+    <mp-icon icon="sticker" size="{{26}}"></mp-icon>
+    <mp-icon icon="add2" size="{{26}}"></mp-icon>
+  </view>
+  <button type="primary">发送</button>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="tabBer">
+  <view class="index" bindtap="gotoPage" data-page="/pages/index/index" data-this="index">
+    <view class="infor"><mp-icon icon="home" color="{{indexColor}}" size="{{24}}"></mp-icon></view>
+    <view class="infor"><text class="text" style="color:{{indexColor}}">首页</text></view>
+  </view>
+  <view class="find" bindtap="gotoPage" data-page="/pages/find/find" data-this="find">
+    <view class="infor"><mp-icon icon="discover" color="{{findColor}}" size="{{24}}"></mp-icon></view> 
+    <view class="infor"><text class="text" style="color:{{findColor}}">发现</text></view> 
+  </view>
+  <view class="my" bindtap="gotoPage" data-page="/pages/my/my" data-this="my">
+    <view class="infor"><mp-icon icon="me" color="{{myColor}}" size="{{24}}"></mp-icon></view> 
+    <view class="infor"><text class="text" style="color:{{myColor}}">我的</text></view>  
+  </view>
+</view>

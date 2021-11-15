@@ -1,0 +1,18 @@
+<!--pages/index/runStar/runStar.wxml-->
+<view class="container">
+  <view wx:for="{{array}}" wx:key="index" class="userInfo" bindtap="appearImg" data-index="{{index}}">
+    <icon class="iconfont {{index==0?'icon-guanjun':index==1?'icon-yajun':index==2?'icon-jijun':''}}"
+    style="color:{{index==0?'#ff6f00':index==1?'white':index==2?'#70430f':''}}"></icon>
+    <text style="color:{{index<3?'red':'#ff6f00'}};font-size:{{index<3?'56rpx':'46rpx'}};font-weight:{{index<3?'bolder':''}}">{{index+1}}</text>
+    <view>
+      <text>{{item.name}}</text>
+      <view>{{item.grade}} 
+        <mp-icon icon="star" type="field" color="yellow" size="{{24}}"></mp-icon>    
+      </view>
+    </view>
+  </view>
+  <text class="bot">到底了!!!</text>
+  <view class="mask {{img?'':'hiddenCre'}}" bindtap="clearImg">
+    <image src="{{imgSrc}}"></image>
+  </view>
+</view>

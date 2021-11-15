@@ -1,0 +1,129 @@
+/* pages/find/find.wxss */
+.find{
+  width:100%;
+}
+/* title设置 */
+.find .title{
+  line-height:100rpx;
+  padding-left:30rpx;
+  padding-right:20rpx;
+  color:#837d87;
+  display:flex;
+  justify-content: space-between;
+}
+.find .title .icon-chuangjian{
+  width:64rpx;
+  height:0rpx;
+  font-size:60rpx;
+}
+/* 更多信息 */
+.find .title .more{
+  font-size:30rpx;
+  height:40rpx;
+  line-height:36rpx;
+  margin-top:36rpx;
+  padding:0 6rpx;
+  background-color: #4aff03;
+}
+.find .title .more text{
+  margin-right:8rpx;
+}
+/* 部落条 */
+.find .main .mainBlog{
+  box-sizing: border-box;
+  width:100%;
+  border-radius:12rpx;
+  line-height:100rpx;
+  background-color:#ffe3fe;
+  margin-bottom:36rpx;
+  display:flex;
+  justify-content: space-between;
+  padding-left:36rpx;
+  padding-right:12rpx;
+}
+.find .main .mainBlog .leftInfor{
+  display:flex;
+}
+.find .main .mainBlog .leftInfor view{
+  width:66rpx;
+  height:40rpx;
+  line-height:40rpx;
+  margin-top:32rpx;
+  margin-right:16rpx;
+  border-radius:10rpx;
+  text-align: center;
+  font-size:30rpx;
+  color:white;
+  background-color:green;
+}
+.find .main .mainBlog .leftInfor text{
+  color:#4d4d4d;
+  font-size:36rpx;
+}
+.find .main .mainBlog .leftInfor .gradetext{
+  margin-left:36rpx;
+  color:pink;
+}
+.find .main .mainBlog .leftInfor mp-icon{
+  line-height:1;
+  width:44rpx;
+}
+.find .main .mainBlog .rightInfor{
+  color:#837d87;
+  font-size:32rpx;
+}
+/* 弹出框 */
+.container .mask{
+  box-sizing: border-box;
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  overflow: hidden;
+  background-color: transparent;
+  z-index:99;
+}
+  /* 创建部落 */
+.container .mask .myBox{
+  width:80%;
+  height:580rpx;
+  margin:160rpx auto 0;
+  border-radius:24rpx;
+  color:white;
+  background-color:gray;
+}
+.container .mask .myBox>text{
+  display:block;
+  width:100%;
+  line-height:82rpx;
+  border-bottom:2rpx white solid;
+  text-align: center;
+  font-size:42rpx;
+  color:#fffbb1;
+}
+.container .mask .myBox form{
+  display:block;
+  width:80%;
+  margin:0 auto;
+}
+.container .mask .myBox form > view{
+  width:100%;
+  margin-top:12rpx;
+}
+.container .mask .myBox form radio-group label{
+  margin-right:36rpx;
+}
+.container .mask .myBox form .blogNameCre,.blogNumCre{
+  box-sizing: border-box;
+  width:100%;
+  padding-left:24rpx;
+  color:gray;
+  background-color:white;
+}
+.container .mask .myBox form button{
+  width:160rpx;
+  line-height:92rpx;
+  margin-top:32rpx;
+  padding:0;
+}

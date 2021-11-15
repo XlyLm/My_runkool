@@ -1,0 +1,54 @@
+/* pages/index/runStar/runStar.wxss */
+.container .bot{
+  display: block;
+  line-height:120rpx;
+  text-align: center;
+}
+.userInfo{
+  box-sizing: border-box;
+  padding:0 24rpx;
+  width:90%;
+  line-height:120rpx;
+  display: flex;
+  color:green;
+  justify-content: space-between;
+  border-radius:24rpx;
+  margin:36rpx auto 0;
+  background-color:#eae3ea;
+}
+.userInfo>view {
+  box-sizing: border-box;
+  padding:0 24rpx;
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo .iconfont{
+  font-size:52rpx;
+}
+.userInfo mp-icon{
+  position: relative;
+  left:0;
+  top:-8rpx;
+  line-height:24rpx;
+}
+.container .mask{
+  box-sizing: border-box;
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  overflow: hidden;
+  background-color: transparent;
+  z-index:99;
+}
+.container .hiddenCre{
+  height:0;
+}
+.container .mask image{
+  width:360rpx;
+  height:360rpx;
+  margin:120rpx 180rpx 0;
+  background-color:yellow;
+}

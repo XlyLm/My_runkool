@@ -1,0 +1,29 @@
+<!--pages/index/runStart/runStart.wxml-->
+<view class="container">
+  <view class="location">
+      <map longitude="{{getLongitude}}" latitude="{{getLatitude}}" scale="{{getScale}}" markers="{{getMakers}}" polyline="getPolyline" circles="{{getCircles}}" show-location="true" show-compass="true" enable-rotate="true" bindcontroltap="bindcontroltap" bindupdated="bindupdated">
+        <view wx:if="{{show}}" class="controles" bindtap="backLocation"></view>
+      </map>
+  </view>
+  <!-- 等待 -->
+  <view wx:if="{{!show}}" class="loading"><text>加载地图中...</text></view>
+  <!-- 跑步数据 -->
+  <view wx:if="{{show}}" class="runCont">
+    <view class="speed">
+      <text>您的当前速度</text>
+      <view>Speed：<text class="text">{{userSpeed}}</text>m/s</view>
+    </view>
+    <view class="time">
+      <text>当前所花时间</text>
+      <view>Time：<text class="text">{{userTime}}</text>s</view>
+    </view>
+    <view class="butGroups">
+      <button wx:if="{{start}}" type="primary" bindtap="runStart">开始</button>
+      <button wx:if="{{start}}" type="default" bindtap="runClear">取消</button>
+      <button wx:if="{{!start}}" type="warn" bindtap="runDown">暂停</button>
+      <button wx:if="{{!start}}" type="primary" bindtap="runFinsh">完成</button>
+    </view>
+  </view>
+  <!-- 遮幕 -->
+  <view wx:if="{{mask}}" class="mask"></view>
+</view>

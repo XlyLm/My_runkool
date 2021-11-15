@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    数据库接口和地址
+    url: jdbc:mysql://127.0.0.1:3306/koolrun
+#    数据库管理员和密码
+    username: root
+    password: root

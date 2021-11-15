@@ -1,0 +1,142 @@
+/* 轮播图 */
+.swiper{
+  width:100%;
+  border-radius:4%;
+  overflow:hidden;
+}
+.swiper swiper-item image{
+  width:100%;
+  height:100%;
+}
+/* 公共样式 */
+.blogNamecont,.infor,.playCard,.vLine,.action{
+  width:100%;
+  margin-top:16rpx;
+  background-color:#ffe3fe;
+  box-sizing: border-box;
+}
+/* 部落名 */
+.blogNamecont{
+  line-height:100rpx;
+  display:flex;
+  color:#b61919;
+  font-weight: bolder;
+}
+.blogNamecont image{
+  width:80rpx;
+  height:80rpx;
+  margin:10rpx 16rpx 0;
+}
+/* 打卡 */
+.playCard{
+  display:flex;
+  justify-content: space-around;
+  padding-bottom:6rpx;
+}
+.playCard .icon-tuandui,.icon-geren{
+  color:red;
+  margin-right:10rpx;
+  font-size:50rpx;
+}
+.playCard text{
+  font-size:30rpx;
+}
+/* 酷跑信息 */
+.infor{
+  height:160rpx;
+  display:flex;
+  padding-top:30rpx;
+}
+.infor .inforLine{
+  width:0;
+  height:80%;
+  margin-top:1%;
+  border-left:6rpx solid gray;
+  opacity: 0.4;
+}
+.infor>view{
+  width:25%;
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+}
+.infor .scan .icon-saoyisao{
+  width:100%;
+  height:84rpx;
+  line-height:92rpx;
+  text-align: center;
+  font-size:80rpx;
+  color:#12aced;
+}
+.infor>view text{
+  font-size:30rpx;
+  color:#b619a9;
+}
+/* <!-- 酷跑开始 --> */
+.runStart{
+  width:100%;
+  line-height:120rpx;
+  text-align: center;
+  margin-top:16rpx;
+  border-radius:2%;
+  color:white;
+  background:url("https://img2.baidu.com/it/u=275377869,874401419&fm=26&fmt=auto&gp=0.jpg") no-repeat;
+  background-size: cover;
+}
+.vLine{
+  width:100%;
+  height:0;
+  border-bottom:4rpx solid gray;
+}
+/* 活动容器 */
+.action{
+  padding:10rpx 12rpx 0 24rpx;
+}
+.action .head{
+  width:100%;
+  box-sizing: border-box;
+  line-height:60rpx;
+  display:flex;
+  font-size:30rpx;
+  justify-content: space-between;
+}
+.action .head view text{
+  color:gray;
+}
+.action .head mp-icon{
+  margin-left:8rpx;
+}
+/* 活动列表 */
+.action .main{
+  width:100%;
+}
+.action .main .actions{
+  width:100%;
+  height:200rpx;
+  font-size:24rpx;
+  margin-bottom:24rpx;
+  border-bottom:2rpx solid #a9a7aa;
+}
+.action .main .actions .actImage image{
+  width:99%;
+  height:100rpx;
+  margin-bottom:16rpx;
+  border-radius:20rpx;
+  overflow: hidden;
+}
+/* 活动信息 */
+.action .main .actions .actionName,.actionInfo{
+  box-sizing: border-box;
+  width:99%;
+  padding:0 10rpx;
+}
+.action .main .actions .actionName{
+  box-sizing: border-box;
+  width:99%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 10rpx;
+}
+.action .main .actions .actionInfo text{
+ margin-right:50rpx;
+}

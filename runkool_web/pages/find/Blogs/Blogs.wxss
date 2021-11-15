@@ -1,0 +1,49 @@
+/* pages/find/Blogs/Blogs.wxss */
+.find .main .bot{
+  display: block;
+  line-height:120rpx;
+  text-align: center;
+}
+.find .main .mainBlog{
+  box-sizing: border-box;
+  width:100%;
+  border-radius:12rpx;
+  line-height:100rpx;
+  background-color:#ffe3fe;
+  margin-top:36rpx;
+  display:flex;
+  justify-content: space-between;
+  padding-left:36rpx;
+  padding-right:12rpx;
+}
+.find .main .mainBlog .leftInfor{
+  display:flex;
+}
+.find .main .mainBlog .leftInfor view{
+  width:66rpx;
+  height:40rpx;
+  line-height:40rpx;
+  margin-top:32rpx;
+  margin-right:16rpx;
+  border-radius:10rpx;
+  text-align: center;
+  font-size:30rpx;
+  color:white;
+  background-color:green;
+}
+.find .main .mainBlog .leftInfor text{
+  color:#4d4d4d;
+  font-size:36rpx;
+}
+.find .main .mainBlog .leftInfor .gradetext{
+  margin-left:36rpx;
+  color:pink;
+}
+.find .main .mainBlog .leftInfor mp-icon{
+  line-height:1;
+  width:44rpx;
+}
+.find .main .mainBlog .rightInfor{
+  color:#837d87;
+  font-size:32rpx;
+}

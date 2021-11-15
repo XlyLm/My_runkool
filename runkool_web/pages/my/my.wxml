@@ -1,0 +1,42 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="head">
+    <image mode="aspectFit" src="{{user.img}}"></image>
+    <view class="userInfor" bindtap="toUserInfor">
+      <view class="userName">
+        <text>{{user.name}}</text>
+        <view><text>{{user.grade}}</text>星用户</view>
+      </view>
+      <view class="userAddress">
+        <text>地址：{{user.address}}</text>
+      </view>
+    </view>
+    <view class="userCode" bindtap="showUserCode"><mp-icon icon="qr-code" size="{{28}}"></mp-icon></view>
+    <view wx:if="{{code}}" class="mask" bindtap="clearCode"><image mode="aspectFill" src="{{user.code}}"></image></view>
+  </view>
+  <!-- first -->
+  <view class="myCont">
+    <view class="bar" wx:for="{{array}}" wx:key="index" bindtap="{{'to'+item.name}}">
+      <view>
+        <mp-icon class="myIcon" icon="{{item.icon}}" type="field" color="{{item.color}}" size="{{22}}"></mp-icon>
+        <text class="myText">{{item.title}}</text>
+      </view>
+      <view class="arrow">
+        <mp-icon icon="arrow" color="#b4a8a3" size="{{14}}"></mp-icon>
+      </view>
+    </view>
+  </view>
+  <!-- second -->
+  <view class="myCont">
+    <view class="bar" wx:for="{{array2}}" wx:key="index" bindtap="{{'to'+item.name}}">
+      <view>
+        <mp-icon class="myIcon" icon="{{item.icon}}" type="field" color="{{item.color}}" size="{{22}}"></mp-icon>
+        <text class="myText">{{item.title}}</text>
+      </view>
+      <view class="arrow">
+        <text class="rang" wx:if="{{item.rang}}">{{item.rang}}</text>
+        <mp-icon icon="arrow" color="#b4a8a3" size="{{14}}"></mp-icon>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+{
+  "id": "2728852",
+  "name": "酷跑",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6633987",
+      "name": "上传图片",
+      "font_class": "shangchuantupian",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "3402049",
+      "name": "季军",
+      "font_class": "jijun",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "18171522",
+      "name": "冠军",
+      "font_class": "guanjun",
+      "unicode": "ef3c",
+      "unicode_decimal": 61244
+    },
+    {
+      "icon_id": "20478861",
+      "name": "亚军",
+      "font_class": "yajun",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "15395434",
+      "name": "创建",
+      "font_class": "chuangjian",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "11594395",
+      "name": "扫一扫",
+      "font_class": "saoyisao",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "10332468",
+      "name": "团队",
+      "font_class": "tuandui",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "19651113",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e7f5",
+      "unicode_decimal": 59381
+    }
+  ]
+}

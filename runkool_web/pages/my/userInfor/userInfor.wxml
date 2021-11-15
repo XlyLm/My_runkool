@@ -1,0 +1,68 @@
+<!--pages/my/userInfor/userInfor.wxml-->
+<view class="container">
+<!-- 用户头像 -->
+  <view class="userImg" bindtap="changeImg">
+    <text>头像</text>
+    <view>
+      <image mode="aspectFit" src="{{user.img}}"></image>
+      <mp-icon class="mp-icon" icon="arrow" color="#b4a8a3" size="{{18}}"></mp-icon>
+    </view>
+  </view>
+  <!-- 用户账号 -->
+  <view class="account">
+    <text>账号</text>
+    <view>{{user.num}}</view>  
+  </view>
+  <!-- 用户手机号 -->
+  <view class="userPhone">
+    <text>手机号</text>
+    <view>{{user.phone}}</view>
+  </view>
+  <!-- 昵称 -->
+  <view class="nickName" bindtap="changeInfor" data-users="昵称">
+    <text>昵称</text>
+    <view>{{user.name}}
+      <mp-icon icon="arrow" color="#b4a8a3" size="{{16}}"></mp-icon>
+    </view>
+  </view>
+  <!-- 性别 -->
+  <view class="sex" bindtap="changeInfor" data-users="性别">
+    <text>性别</text>
+    <view>{{user.sex}}
+      <mp-icon icon="arrow" color="#b4a8a3" size="{{16}}"></mp-icon>
+    </view>
+  </view>
+  <!-- 星座 -->
+  <view class="constellation" bindtap="changeInfor" data-users="星座">
+    <text>星座</text>
+    <view>{{user.ct}}
+      <mp-icon icon="arrow" color="#b4a8a3" size="{{16}}"></mp-icon>
+    </view>
+  </view>
+  <!-- 公司or学校 -->
+  <view class="work" bindtap="changeInfor" data-users="公司or学校">
+    <text>公司/学校</text>
+    <view>{{user.work}}
+      <mp-icon icon="arrow" color="#b4a8a3" size="{{16}}"></mp-icon>
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class="address" bindtap="changeInfor" data-users="地址">
+    <text>家乡地址</text>
+    <view>{{user.address}}
+      <mp-icon icon="arrow" color="#b4a8a3" size="{{16}}"></mp-icon>
+    </view>
+  </view>
+  <button type="primary" bindtap="keepInfor">保存信息</button>
+  <!-- 弹窗 -->
+  <view wx:if="{{mask}}" class="mask">
+    <view class="cont">
+      <text>修改{{changeTitle}}</text>
+      <view class="inputBox"><input type="text" value="{{changeContent}}"maxlength="10" bindinput="bindinput" placeholder-color="gray" placeholder="输入"/></view>
+      <view class="buttonBox">
+        <button type="warn" bindtap="clearChange">取消</button>
+        <button type="primary" bindtap="keepChange">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

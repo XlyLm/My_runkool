@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.xie.dao.ActionsDao">
+
+    <resultMap type="www.xie.entity.Actions" id="ActionsMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userid" column="userid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="img" column="img" jdbcType="VARCHAR"/>
+        <result property="type" column="type" jdbcType="VARCHAR"/>
+        <result property="isover" column="isover" jdbcType="VARCHAR"/>
+        <result property="e" column="e" jdbcType="VARCHAR"/>
+        <result property="w" column="w" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ActionsMap">
+        select
+          id, userid, name, time, address, img, type, isover, e, w
+        from koolrun.actions
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ActionsMap">
+        select
+          id, userid, name, time, address, img, type, isover, e, w
+        from koolrun.actions
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ActionsMap">
+        select
+        id, userid, name, time, address, img, type, isover, e, w
+        from koolrun.actions
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="time != null and time != ''">
+                and time = #{time}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="img != null and img != ''">
+                and img = #{img}
+            </if>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
+            <if test="isover != null and isover != ''">
+                and isover = #{isover}
+            </if>
+            <if test="e != null and e != ''">
+                and e = #{e}
+            </if>
+            <if test="w != null and w != ''">
+                and w = #{w}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.actions(userid, name, time, address, img, type, isover, e, w)
+        values (#{userid}, #{name}, #{time}, #{address}, #{img}, #{type}, #{isover}, #{e}, #{w})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.actions(userid, name, time, address, img, type, isover, e, w)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.time}, #{entity.address}, #{entity.img}, #{entity.type},
+            #{entity.isover},#{entity.e},#{entity.w})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into koolrun.actions(userid, name, time, address, img, type, isover, e,w)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userid}, #{entity.name}, #{entity.time}, #{entity.address}, #{entity.img}, #{entity.type},
+            #{entity.isover}, #{entity.e}, #{entity.w})
+        </foreach>
+        on duplicate key update
+        userid = values(userid) , name = values(name) , time = values(time) , address = values(address) , img =
+        values(img) , type = values(type) , isover = values(isover), e = values(e), w = values(w)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update koolrun.actions
+        <set>
+            <if test="userid != null">
+                userid = #{userid},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="time != null and time != ''">
+                time = #{time},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="img != null and img != ''">
+                img = #{img},
+            </if>
+            <if test="type != null and type != ''">
+                type = #{type},
+            </if>
+            <if test="isover != null and isover != ''">
+                isover = #{isover},
+            </if>
+            <if test="e != null and e != ''">
+                e = #{e},
+            </if>
+            <if test="w != null and w != ''">
+                w = #{w},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from koolrun.actions where id = #{id}
+    </delete>
+
+    <!--查询所有数据-->
+    <select id="queryAllActions" resultType="www.xie.entity.Actions">
+        select
+          id, userid, name, time, address, img, type, isover, e, w
+        from koolrun.actions
+    </select>
+
+    <!--查询单个-->
+    <select id="queryActByUN" resultType="www.xie.entity.Actions">
+        select
+          id, userid, name, time, address, img, type, isover,e, w
+        from koolrun.actions
+        where userid = #{userid} and name = #{name} and time = #{time} and address = #{address}
+    </select>
+</mapper>

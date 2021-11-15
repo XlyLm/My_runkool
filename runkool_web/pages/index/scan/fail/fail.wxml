@@ -1,0 +1,7 @@
+<!--pages/index/scan/fail/fail.wxml-->
+<view class="container">
+  <view class="errCont">
+    <mp-icon icon="report-problem" color="yellow" type="field" size="{{36}}"></mp-icon>
+    <text>扫码失败，请重新尝试!</text>
+  </view>
+</view>

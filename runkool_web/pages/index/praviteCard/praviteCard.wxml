@@ -1,0 +1,54 @@
+<!--pages/index/praviteCard/praviteCard.wxml-->
+<view class="container">
+  <scroll-view style="height:100%" scroll-y="true"  bindscrolltolower="lower">
+  <!-- 搜索栏 -->
+  <view class="searchCont">
+    <view class="search_box">
+      <icon class="icon-search" type="search" size="22"></icon>
+      <input type="text" class="search-bar__input" placeholder="搜索活动名" bindinput="inputChange" value="{{inputVal}}" focus="{{inputFoc}}"/>
+    </view>
+    <label class="search-bar__label {{labelClass?'':'appearH'}}" bindtap="showInput">
+        <icon class="icon-search" type="search" size="20"></icon>
+        <text class="search-bar__text">搜索</text>
+    </label>
+    <text class="icon-clear" bindtap="clearInput">取消</text>
+  </view>
+  <!-- 添加活动 -->
+  <view class="addAct" wx:if="{{actArr}}" bindtap="addAct">
+    <mp-icon icon="add2" size="{{20}}" color="green"></mp-icon>
+    <text>添加活动打卡</text>
+  </view>
+  <!-- 弹出框 -->
+  <view class="mask {{inputTure?'':'hidden'}}">
+    <view class="input_window">
+      <text>请输入活动名</text>
+      <view class="int">
+            <input type="text" value="{{input_wvalue}}" maxlength="10" focus="true" placeholder-style="color:gray" placeholder="输入" bindinput="inputText" maxlength="10"/>
+      </view>
+      <view>
+        <text bindtap="clearInt">取消</text>
+        <text bindtap="tureInt">确认</text> 
+      </view>
+    </view>
+  </view>
+  <!-- 活动列表 -->
+  <view class="playInforCont">
+    <text>活动列表</text>
+    <view class="playInforList" wx:for="{{actArr?array:array2}}" wx:key="index" bindtap="clearAct" data-index="{{index}}">
+      <view>
+        <mp-icon icon="info" color="green" size="{{16}}"></mp-icon>
+        <text>活动：{{item.name}}</text>
+      </view>
+      <view>
+        <mp-icon icon="location" color="green" size="{{16}}"></mp-icon>
+        <text>位置：{{item.address}}</text>
+      </view>
+      <view>
+        <mp-icon icon="time" color="green" size="{{16}}"></mp-icon>
+        <text>时间：{{item.time}}</text>
+      </view>
+    </view>
+    <text>{{bottom?"到底了!!!":'正在搜索...'}}</text>
+  </view>
+</scroll-view>
+</view>

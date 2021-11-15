@@ -1,0 +1,32 @@
+/* pages/entery/entery.wxss */
+.box{
+  width:92%;
+  background-color:pink;
+  border-radius:24rpx;
+  margin:120rpx auto 0;
+}
+.box image{
+  width:120rpx;
+  height:120rpx;
+  margin:36rpx 0 0 42rpx;
+  background-color:gray;
+  border-radius:50%;
+}
+.box .form{
+  width:98%;
+  margin:0 auto;
+  padding-top:36rpx;
+}
+.box .form view{
+  width:92%;
+  line-height:120rpx;
+  display: flex;
+  margin:0 auto 36rpx;
+  background-color:white;
+  padding-left:24rpx;
+}
+.box .form view input{
+  margin-top:36rpx;
+  color:gray;
+  line-height:108rpx;
+}

@@ -1,0 +1,23 @@
+<!--pages/find/Blogs/Blogs.wxml-->
+<page-meta>
+  <navigation-bar title="{{navTitle}}"/>
+</page-meta>
+<view class="find">
+  <scroll-view style="height:100%" scroll-y="true"  bindscrolltolower="lower">
+  <view class="main">
+    <view class="mainBlog" wx:for="{{array}}" wx:key="index"  data-index="{{index}}" bindtap="{{'clear'+id}}">
+      <view class="leftInfor">
+        <view>{{item.isopen}}</view>
+        <text>{{item.name}}</text>
+        <text class="gradetext">{{item.grade}}</text>
+        <mp-icon icon="star" color="#ffcd03" type="field" size="{{18}}"></mp-icon>
+      </view>
+      <view class="rightInfor">
+        <text>{{item.personnum}}人</text>
+        <mp-icon icon="arrow" color="#837d87" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+  <text class="bot">{{bottom?"到底了!!!":'正在搜索...'}}</text>
+  </view>
+</scroll-view>
+</view>

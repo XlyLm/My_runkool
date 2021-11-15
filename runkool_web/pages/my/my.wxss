@@ -1,0 +1,104 @@
+/* pages/my/my.wxss */
+/* 头部信息 */
+.head{
+  display:flex;
+  box-sizing: border-box;
+  border-radius:36rpx;
+  width:96%;
+  margin-left:2%;
+  background-color:#ffe3fe;
+  padding:30rpx 42rpx;
+}
+/* 用户信息 */
+.head image{
+  width:120rpx;
+  height:120rpx;
+  border-radius:20rpx;
+  margin-right:36rpx;
+}
+.head .userInfor{
+  height:120rpx;
+  font-size:32rpx;
+  margin-right:52rpx;
+}
+.head .userInfor .userName,.userAddress{
+  line-height:60rpx;
+}
+.head .userInfor .userName{
+  display:flex;
+}
+.head .userInfor .userName>text{
+  margin-right:18rpx;
+}
+.head .userInfor .userName>view{
+  padding:0 10rpx;
+  font-size:20rpx;
+  height:32rpx;
+  line-height:32rpx;
+  margin-top:18rpx;
+  text-align:center;
+  color:white;
+  border-radius:10rpx;
+  background-color:blue;
+}
+.head .userInfor .userName>view text{
+  font-size:22rpx;
+  margin-right:8rpx;
+  color:#ffbc03;
+}
+.head .userInfor .userAddress{
+  color:gray;
+}
+/* 用户二维码 */
+.head .userCode{
+  padding-top:26rpx;
+}
+.head .mask{
+  box-sizing: border-box;
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  background-color: transparent;
+  z-index:99;
+}
+.head .mask image{
+  margin-top:240rpx;
+  margin-left:200rpx;
+  width:360rpx;
+  height:360rpx;
+  background-color:pink;
+}
+/* 设置条 */
+.myCont{
+  box-sizing: border-box;
+  width:100%;
+  border-radius:12rpx;
+  padding:18rpx 12rpx;
+  margin-top:36rpx;
+  background-color:#ffe3fe;
+}
+.myCont .bar{
+  height:92rpx;
+  border-bottom:2rpx solid #b4a8a3;
+  display:flex;
+  justify-content: space-between;
+}
+.myCont .bar .arrow{
+  height:52rpx;
+  margin-top:18rpx;
+  overflow: hidden;
+}
+.myCont .bar .arrow .rang{
+  font-size:20rpx;
+  color:#b4a8a3;
+  margin-right:6rpx;
+}
+.myIcon{
+  margin-right:18rpx;
+}
+.myText{
+  line-height:92rpx;
+  font-size:32rpx;
+}

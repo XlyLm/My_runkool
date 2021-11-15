@@ -1,0 +1,70 @@
+<!--pages/find/find.wxml-->
+<view class="container">
+  <view class="find" wx:for="{{array}}" wx:key="index">
+    <view class="title">
+      <text>{{item.title}}</text>
+      <icon bindtap="createBlog" wx:if="{{item.title === '我的部落'}}" class="iconfont icon-chuangjian"></icon>
+      <view class="more" bindtap="{{'to'+item.tab}}" wx:if="{{item.infor.length>3}}">
+        <text>more</text>
+        <mp-icon icon="arrow" color="#837d87" size="{{8}}"></mp-icon>
+      </view>
+    </view>
+    <view class="main">
+      <view class="mainBlog"  wx:if="{{index<3}}" wx:for="{{item.infor}}" wx:for-item="item2" wx:key="index" data-index="{{index}}" bindtap="{{'clear'+item.tab}}">
+        <view class="leftInfor">
+          <view>{{item2.isopen=="true"?'开放':'私有'}}</view>
+          <text>{{item2.name}}</text>
+          <text class="gradetext">{{item2.grade}}</text>
+          <mp-icon icon="star"color="#ffcd03" type="field" size="{{18}}"></mp-icon>
+        </view>
+        <view class="rightInfor">
+          <text>{{item2.personnum}}人</text>
+          <mp-icon icon="arrow" color="#837d87" size="{{16}}"></mp-icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{creBlog.Is}}" class="mask">
+    <view class="myBox ">
+      <text class="titleCre">创建部落</text>
+      <form>
+      <!-- 开放性 -->
+        <view >
+          <text>是否开放?</text>
+          <radio-group>
+            <label bindtap="choose1"><radio checked="true"/>私有</label>
+            <label bindtap="choose2"><radio checked="{{creBlog.open}}"/>开放</label>
+          </radio-group>
+        </view>
+        <!-- 部落名  -->
+        <view>
+          <text>部落名:</text>
+          <view class="blogNameCre"><input type="text" maxlength="6" placeholder-color="gray" placeholder="最大六字符" value="{{creBlog.name}}" bindinput="intBlogName"/></view>
+        </view>
+        <!-- 最大人数 -->
+        <view>
+          <text>最大人数:</text>
+          <view class="blogNumCre"><input type="text" maxlength="3" placeholder-color="gray" placeholder="0<number<500" value="{{creBlog.maxNum}}" bindinput="intBlogNum"/></view>
+        </view>
+        <!-- 提交 -->
+        <button type="primary" bindtap="submitBlog">提交</button>
+      </form>
+    </view>
+  </view>
+  <!-- 我的部落弹出框 -->
+  <view wx:if="{{tapBlog1.Is}}" class="mask">
+    <view class="myBox2 ">
+      <form></form>
+    </view>
+  </view>
+  <!-- 加入的部落弹出框 -->
+  <view wx:if="{{tapBlog2.Is}}" class="mask">
+    <view class="addBox">
+    </view>
+  </view>
+  <!-- 周围部落弹出框 -->
+  <view wx:if="{{tapBlog3.Is}}" class="mask">
+    <view class="surrBox">
+    </view>
+  </view>
+</view>

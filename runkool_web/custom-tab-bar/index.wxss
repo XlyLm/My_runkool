@@ -1,0 +1,23 @@
+/* custom-tab-bar/index.wxss */
+/* custom-tab-bar/index.wxss */
+.tabBer{
+  width:100%;
+  height:120rpx;
+  background-color:#ff00f2;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  box-sizing: border-box;
+  padding:16rpx 80rpx;
+}
+.tabBer .index,.find,.my{
+  text-align:center;
+  height:100%;
+ width:100rpx;
+}
+.tabBer .infor{
+ height:40rpx;
+}
+.tabBer .infor .text{
+  font-size:30rpx;
+}

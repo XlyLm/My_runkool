@@ -1,0 +1,31 @@
+<!--pages/index/teamCard/teamCard.wxml-->
+<view class="container">
+  <scroll-view style="height:100%" scroll-y="true"  bindscrolltolower="lower">
+  <view class="searchCont">
+    <view class="search_box">
+      <icon class="icon-search" type="search" size="22"></icon>
+      <input type="text" class="search-bar__input" placeholder="搜索部落名" value="" bindinput="inputChange" value="{{inputVal}}" focus="{{inputFoc}}"/>
+    </view>
+    <label class="search-bar__label {{labelClass?'':'appearH'}}" bindtap="showInput">
+        <icon class="icon-search" type="search" size="20"></icon>
+        <text class="search-bar__text">搜索</text>
+    </label>
+    <text class="icon-clear" bindtap="clearInput">取消</text>
+  </view>
+  <view class="action">
+    <text>活动列表</text>
+    <view class="actList {{item.isover=='true'?'colorGray':item.isplay=='true'?'colorGreen':'colorYellow'}}" wx:for="{{actArr?array:array2}}" wx:key="index" bindtap="play" data-list="{{index}}">
+      <view class="actImage"><image  mode="scaleToFill" src="{{item.img}}"></image></view>
+      <view class="actionName">
+        <text>举办部落：{{item.name}}</text>
+        <text>{{item.type}}</text>
+      </view>
+      <view class="actionInfo">
+        <text>时间：{{item.time}}</text>
+        <text>地点：{{item.address}}</text>
+      </view>
+    </view>
+    <text>{{bottom?"到底了!!!":'正在搜索...'}}</text>
+  </view>
+  </scroll-view>
+</view>

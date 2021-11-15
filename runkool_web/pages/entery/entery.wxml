@@ -1,0 +1,14 @@
+<!--pages/entery/entery.wxml-->
+<view class="container">
+  <view class="box">
+    <image mode="aspectFit" src="{{user.img}}"></image>
+    <view class="form">
+      <view>手机号：<input type="number" value="{{phone}}"  placeholder-color="gray" placeholder="11位" maxlength="11" bindinput="bindinput1"/></view>
+      <view>密  码：<input type="text" value="{{password}}" password placeholder-color="gray" placeholder="6~10位" maxlength="10" bindinput="bindinput2"/></view>
+      <button wx:if="{{log}}" type="primary" bindtap="submit">登录</button>
+      <button wx:else type="primary" bindtap="creUser">注册</button>
+      <text wx:if="{{log}}" bindtap="addUser">注册？</text>
+      <text wx:else bindtap="loging">去登录</text>
+    </view>
+  </view>
+</view>

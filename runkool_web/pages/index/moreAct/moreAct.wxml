@@ -1,0 +1,22 @@
+<!--pages/index/moreAct/moreAct.wxml-->
+<view class="container">
+  <scroll-view style="height:100%" scroll-y="true"  bindscrolltolower="lower">
+  <!-- 活动 -->
+  <view class="action">
+    <view class="main" >
+      <view class="actions" wx:for="{{array}}" wx:key="index" data-index="{{index}}" bindtap="addAct" style="color:#a9a7aa">
+        <view class="actImage"><image mode="scaleToFill" src="{{item.img}}"></image></view>
+        <view class="actionName">
+          <text>举办部落/人：{{item.name}}</text>
+          <text>{{item.type}}</text>
+        </view>
+        <view class="actionInfo">
+          <text>时间：{{item.time}}</text>
+          <text>地点：{{item.address}}</text>
+        </view>
+      </view>
+      <text>{{bottom?"到底了!!!":'正在搜索...'}}</text>
+    </view>
+  </view>
+  </scroll-view>
+</view>
